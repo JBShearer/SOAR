@@ -1,288 +1,274 @@
 <!DOCTYPE html>
-<!-- saved from url=(0068)file:///Users/I530341/Downloads/Arkansas_AI_Workshop_PreWork_v2.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>State of Arkansas — AI Workshop Pre-Work</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
 
   :root {
-    --ar-red: #C8102E;
-    --ar-red-dark: #9E0C24;
-    --ar-red-light: #F9E8EB;
-    --sap-gold: #F0AB00;
-    --sap-gold-light: #FFF8E6;
-    --sap-gold-dark: #B8830A;
-    --navy: #1B3A6B;
-    --navy-light: #EEF2F9;
-    --white: #FFFFFF;
-    --off-white: #F7F8FA;
-    --border: #E2E6EE;
-    --text: #1A1A2E;
+    --navy: #1B2A4A;
+    --navy-mid: #243352;
+    --navy-light: #2E4068;
+    --gold: #C9A84C;
+    --gold-light: #E8C96A;
+    --gold-pale: #FBF5E6;
+    --blue-mid: #4A6FA5;
+    --blue-light: #E8EEF8;
+    --green: #2E6B3E;
+    --green-light: #EBF4EE;
+    --red: #6B2E2E;
+    --red-light: #F5EBEB;
+    --gray: #8A9BB0;
+    --gray-light: #F4F6FA;
+    --text: #1E2A3A;
     --text-mid: #4A5568;
-    --text-light: #8A9AB0;
-    --gray-bg: #F4F5F7;
+    --text-light: #718096;
+    --border: #D8E0EE;
+    --white: #FFFFFF;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: 'Source Sans 3', sans-serif;
-    background: var(--off-white);
+    font-family: 'DM Sans', sans-serif;
+    background: #F0F3F9;
     color: var(--text);
-    font-size: 15px;
-    line-height: 1.5;
+    min-height: 100vh;
+    padding: 0;
   }
 
-  /* ── HEADER ── */
-  .header {
-    background: var(--ar-red);
-    padding: 0;
+  /* ── COVER HEADER ── */
+  .cover {
+    background: var(--navy);
+    padding: 56px 64px 48px;
     position: relative;
     overflow: hidden;
   }
-  .header-inner {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 52px 40px 44px;
-    position: relative;
-    z-index: 2;
-  }
-  .header::after {
+  .cover::before {
     content: '';
     position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 4px;
-    background: var(--sap-gold);
+    left: 0; top: 0; bottom: 0;
+    width: 6px;
+    background: var(--gold);
   }
-  /* Subtle diamond pattern */
-  .header::before {
+  .cover::after {
     content: '';
     position: absolute;
-    right: -60px; top: -60px;
-    width: 300px; height: 300px;
-    border: 40px solid rgba(255,255,255,0.06);
-    transform: rotate(45deg);
+    right: -80px; top: -80px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.15);
   }
-
-  .header-eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 18px;
-  }
-  .eyebrow-tag {
-    background: var(--sap-gold);
-    color: var(--ar-red-dark);
+  .cover-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    padding: 4px 10px;
+    padding: 4px 12px;
     border-radius: 2px;
+    margin-bottom: 20px;
   }
-  .eyebrow-divider {
-    width: 1px;
-    height: 14px;
-    background: rgba(255,255,255,0.3);
-  }
-  .eyebrow-label {
-    font-size: 12px;
-    color: rgba(255,255,255,0.65);
-    letter-spacing: 0.5px;
-  }
-
-  .header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 42px;
+  .cover h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 48px;
+    font-weight: 700;
     color: var(--white);
     line-height: 1.1;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
-  .header-sub {
-    font-size: 16px;
-    color: rgba(255,255,255,0.75);
-    font-weight: 300;
+  .cover-sub {
+    font-size: 18px;
+    color: var(--gold);
     margin-bottom: 28px;
+    font-weight: 300;
   }
-  .header-note {
+  .cover-divider {
+    width: 80px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 20px;
+  }
+  .cover-note {
     font-size: 13px;
     color: rgba(255,255,255,0.55);
     font-style: italic;
-    max-width: 540px;
+    max-width: 600px;
     line-height: 1.6;
-    border-left: 2px solid rgba(240,171,0,0.5);
-    padding-left: 12px;
   }
 
-  /* ── PARTICIPANT STRIP ── */
-  .participant-strip {
+  /* ── PARTICIPANT INFO BAR ── */
+  .info-bar {
     background: var(--white);
-    border-bottom: 1px solid var(--border);
-  }
-  .participant-inner {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 24px 40px;
+    border-bottom: 3px solid var(--gold);
+    padding: 28px 64px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 28px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 24px;
   }
-  .p-field label {
+  .info-field label {
     display: block;
     font-size: 10px;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: var(--text-light);
-    margin-bottom: 5px;
+    color: var(--gray);
+    margin-bottom: 6px;
   }
-  .p-field input {
+  .info-field input[type="text"] {
     width: 100%;
     border: none;
     border-bottom: 1.5px solid var(--border);
     padding: 4px 0;
-    font-family: 'Source Sans 3', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-size: 14px;
     color: var(--text);
     background: transparent;
     outline: none;
     transition: border-color 0.2s;
   }
-  .p-field input:focus { border-bottom-color: var(--ar-red); }
+  .info-field input[type="text"]:focus {
+    border-bottom-color: var(--navy);
+  }
 
-  /* ── MAIN ── */
+  /* ── MAIN CONTENT ── */
   .main {
-    max-width: 860px;
+    max-width: 960px;
     margin: 0 auto;
-    padding: 44px 40px 100px;
+    padding: 48px 32px 80px;
   }
 
   /* ── PART HEADER ── */
   .part-header {
     display: flex;
     align-items: center;
-    gap: 14px;
-    margin: 44px 0 20px;
+    gap: 16px;
+    margin: 48px 0 24px;
   }
-  .part-num {
-    width: 36px; height: 36px;
-    background: var(--ar-red);
-    color: var(--white);
-    font-family: 'Playfair Display', serif;
-    font-size: 16px;
+  .part-number {
+    width: 40px; height: 40px;
+    background: var(--navy);
+    color: var(--gold);
+    font-family: 'Libre Baskerville', serif;
+    font-size: 18px;
+    font-weight: 700;
     display: flex; align-items: center; justify-content: center;
-    border-radius: 3px;
+    border-radius: 4px;
     flex-shrink: 0;
   }
-  .part-text {}
   .part-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 22px;
     color: var(--navy);
+    font-weight: 700;
   }
   .part-desc {
     font-size: 13px;
     color: var(--text-light);
+    margin-top: 2px;
     font-style: italic;
   }
 
   /* ── OPEN QUESTION ── */
-  .q-block {
+  .question {
     background: var(--white);
     border: 1px solid var(--border);
-    border-radius: 6px;
-    margin-bottom: 12px;
+    border-radius: 8px;
+    margin-bottom: 16px;
     overflow: hidden;
-    transition: border-color 0.15s, box-shadow 0.15s;
+    transition: box-shadow 0.2s;
   }
-  .q-block:focus-within {
-    border-color: var(--ar-red);
-    box-shadow: 0 0 0 3px rgba(200,16,46,0.08);
+  .question:focus-within {
+    box-shadow: 0 0 0 2px rgba(74,111,165,0.2);
+    border-color: var(--blue-mid);
   }
-  .q-row {
-    display: flex;
-  }
-  .q-num {
-    background: var(--ar-red);
-    color: var(--white);
-    font-size: 12px;
-    font-weight: 700;
-    width: 38px;
+  .question-header {
     display: flex;
     align-items: flex-start;
-    justify-content: center;
-    padding-top: 16px;
-    flex-shrink: 0;
-    font-family: 'Playfair Display', serif;
+    gap: 0;
   }
-  .q-content {
-    padding: 14px 18px 6px;
+  .question-num {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'Libre Baskerville', serif;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 16px 14px;
+    min-width: 44px;
+    text-align: center;
+    align-self: stretch;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 18px;
+    flex-shrink: 0;
+  }
+  .question-body {
+    padding: 16px 20px 0;
     flex: 1;
   }
-  .q-content p {
+  .question-body p {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text);
-    margin-bottom: 3px;
-    line-height: 1.45;
+    line-height: 1.5;
+    margin-bottom: 4px;
   }
-  .q-hint {
+  .question-body .hint {
     font-size: 12px;
     color: var(--text-light);
     font-style: italic;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
   }
-  .q-block textarea {
-    display: block;
+  .question textarea {
     width: 100%;
     border: none;
-    border-top: 1px solid var(--gray-bg);
-    padding: 11px 18px 11px 56px;
-    font-family: 'Source Sans 3', sans-serif;
+    border-top: 1px solid var(--gray-light);
+    padding: 12px 20px 12px 58px;
+    font-family: 'DM Sans', sans-serif;
     font-size: 13px;
     color: var(--text);
-    background: var(--gray-bg);
+    background: var(--gray-light);
     resize: vertical;
-    min-height: 64px;
+    min-height: 72px;
     outline: none;
-    transition: background 0.15s;
+    display: block;
   }
-  .q-block textarea:focus { background: var(--navy-light); }
-  .q-block textarea::placeholder { color: var(--text-light); }
+  .question textarea::placeholder { color: var(--gray); }
+  .question textarea:focus { background: #eef2fb; }
 
-  /* ── LOB TABLE ── */
-  .lob-block {
-    margin-bottom: 28px;
-    border-radius: 6px;
-    overflow: hidden;
-    border: 1px solid var(--border);
+  /* ── LOB SECTION ── */
+  .lob-section {
+    margin-bottom: 32px;
   }
-  .lob-head {
+  .lob-header {
     background: var(--navy);
-    padding: 11px 18px;
+    color: var(--white);
+    padding: 12px 20px;
+    border-radius: 6px 6px 0 0;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
   }
-  .lob-accent {
-    width: 6px; height: 6px;
-    background: var(--sap-gold);
+  .lob-dot {
+    width: 8px; height: 8px;
     border-radius: 50%;
+    background: var(--gold);
     flex-shrink: 0;
   }
-  .lob-name {
+  .lob-title {
     font-size: 13px;
     font-weight: 600;
-    color: var(--white);
+    letter-spacing: 0.5px;
     flex: 1;
-    letter-spacing: 0.3px;
   }
-  .lob-tag {
+  .lob-badge {
     font-size: 10px;
-    color: var(--sap-gold);
-    background: rgba(240,171,0,0.15);
+    background: rgba(201,168,76,0.2);
+    color: var(--gold-light);
     padding: 2px 8px;
     border-radius: 10px;
     letter-spacing: 0.5px;
@@ -292,818 +278,825 @@
     width: 100%;
     border-collapse: collapse;
     background: var(--white);
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    overflow: hidden;
   }
-  .lob-table thead tr { background: var(--gray-bg); }
+  .lob-table thead tr {
+    background: #EEF2F8;
+  }
   .lob-table thead th {
     font-size: 10px;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: var(--text-light);
+    color: var(--gray);
     padding: 8px 14px;
     text-align: left;
     border-bottom: 1px solid var(--border);
   }
-  .lob-table thead th.c { text-align: center; }
+  .lob-table thead th.center { text-align: center; }
+
   .lob-table tbody tr {
-    border-bottom: 1px solid var(--gray-bg);
-    transition: background 0.12s;
+    border-bottom: 1px solid var(--gray-light);
+    transition: background 0.15s;
   }
   .lob-table tbody tr:last-child { border-bottom: none; }
-  .lob-table tbody tr:hover { background: #FFF8F9; }
+  .lob-table tbody tr:hover { background: #F8FAFF; }
+
   .lob-table td {
-    padding: 10px 14px;
+    padding: 11px 14px;
     font-size: 13px;
     color: var(--text-mid);
+    line-height: 1.45;
     vertical-align: middle;
-    line-height: 1.4;
   }
-  .lob-table td.n {
+  .lob-table td.num {
     font-size: 11px;
-    color: var(--text-light);
-    font-weight: 700;
-    width: 28px;
+    color: var(--gray);
+    font-weight: 600;
+    width: 32px;
     text-align: center;
   }
-  .lob-table td.c { text-align: center; width: 80px; }
-  .lob-table td.cm { width: 180px; }
+  .lob-table td.check {
+    text-align: center;
+    width: 60px;
+  }
+  .lob-table td.comments {
+    width: 200px;
+  }
 
-  /* Yes / No */
-  .yn {
+  /* Custom checkbox */
+  .cb-wrap {
     display: flex;
-    gap: 8px;
+    align-items: center;
     justify-content: center;
   }
-  .yn label {
+  input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px; height: 18px;
+    border: 2px solid var(--border);
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    background: var(--white);
+    transition: all 0.15s;
+    flex-shrink: 0;
+  }
+  input[type="checkbox"]:hover {
+    border-color: var(--navy);
+  }
+  input[type="checkbox"]:checked {
+    background: var(--navy);
+    border-color: var(--navy);
+  }
+  input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 4px; top: 1px;
+    width: 6px; height: 10px;
+    border: 2px solid var(--white);
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+  }
+
+  /* YES/NO radio pair */
+  .yn-wrap {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+  }
+  .yn-btn {
     display: flex;
     align-items: center;
     gap: 4px;
     cursor: pointer;
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--text-light);
-    transition: color 0.12s;
   }
-  .yn input[type="radio"] {
+  .yn-btn input[type="radio"] {
     appearance: none;
     -webkit-appearance: none;
-    width: 15px; height: 15px;
+    width: 16px; height: 16px;
     border: 2px solid var(--border);
     border-radius: 50%;
     cursor: pointer;
     position: relative;
     background: var(--white);
-    transition: all 0.12s;
-    flex-shrink: 0;
+    transition: all 0.15s;
   }
-  .yn input[type="radio"]:checked { border-color: var(--ar-red); background: var(--ar-red); }
-  .yn input[type="radio"]:checked::after {
+  .yn-btn input[type="radio"]:checked {
+    border-color: var(--navy);
+    background: var(--navy);
+  }
+  .yn-btn input[type="radio"]:checked::after {
     content: '';
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%,-50%);
-    width: 5px; height: 5px;
+    width: 6px; height: 6px;
     border-radius: 50%;
     background: var(--white);
   }
-  .yn label:has(input:checked) { color: var(--ar-red); }
+  .yn-btn span {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-light);
+  }
+  .yn-btn input[type="radio"]:checked + span {
+    color: var(--navy);
+  }
 
-  .cm-input {
+  /* Comment input in table */
+  .comment-input {
     width: 100%;
     border: 1px solid var(--border);
-    border-radius: 3px;
-    padding: 5px 7px;
-    font-family: 'Source Sans 3', sans-serif;
+    border-radius: 4px;
+    padding: 5px 8px;
+    font-family: 'DM Sans', sans-serif;
     font-size: 12px;
     color: var(--text);
-    background: var(--gray-bg);
-    resize: none;
-    min-height: 34px;
+    background: var(--gray-light);
     outline: none;
-    transition: border-color 0.12s, background 0.12s;
+    resize: none;
+    min-height: 36px;
+    transition: border-color 0.15s;
   }
-  .cm-input:focus { border-color: var(--ar-red); background: var(--white); }
+  .comment-input:focus {
+    border-color: var(--blue-mid);
+    background: var(--white);
+  }
 
-  /* ── CHECKBOX SECTION ── */
-  .cb-section {
+  /* ── CHECKBOX GRID SECTION ── */
+  .checkbox-section {
     background: var(--white);
     border: 1px solid var(--border);
-    border-radius: 6px;
-    margin-bottom: 16px;
+    border-radius: 8px;
+    margin-bottom: 24px;
     overflow: hidden;
   }
-  .cb-head {
-    padding: 12px 18px;
-    background: var(--gray-bg);
+  .checkbox-section-header {
+    background: var(--gray-light);
     border-bottom: 1px solid var(--border);
-    font-size: 14px;
+    padding: 12px 20px;
+    font-size: 13px;
     font-weight: 600;
     color: var(--navy);
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
   }
-  .cb-hint {
-    font-size: 12px;
+  .checkbox-section-sub {
+    font-size: 11px;
     color: var(--text-light);
     font-weight: 400;
     font-style: italic;
+    margin-left: 8px;
   }
-  .cb-grid {
+  .checkbox-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 4px 0;
   }
-  .cb-item {
+  .checkbox-item {
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    padding: 10px 18px;
+    padding: 10px 20px;
     cursor: pointer;
-    border-bottom: 1px solid var(--gray-bg);
     transition: background 0.12s;
+    border-bottom: 1px solid var(--gray-light);
   }
-  .cb-item:nth-last-child(-n+2) { border-bottom: none; }
-  .cb-item:hover { background: var(--ar-red-light); }
-  .cb-item input[type="checkbox"] {
-    appearance: none;
-    -webkit-appearance: none;
-    width: 17px; height: 17px;
-    border: 2px solid var(--border);
-    border-radius: 3px;
-    cursor: pointer;
-    position: relative;
-    background: var(--white);
-    flex-shrink: 0;
-    margin-top: 1px;
-    transition: all 0.12s;
-  }
-  .cb-item input[type="checkbox"]:checked {
-    background: var(--ar-red);
-    border-color: var(--ar-red);
-  }
-  .cb-item input[type="checkbox"]:checked::after {
-    content: '';
-    position: absolute;
-    left: 3px; top: 0px;
-    width: 6px; height: 10px;
-    border: 2px solid var(--white);
-    border-top: none; border-left: none;
-    transform: rotate(45deg);
-  }
-  .cb-item span {
+  .checkbox-item:nth-last-child(-n+2) { border-bottom: none; }
+  .checkbox-item:hover { background: var(--blue-light); }
+  .checkbox-item input[type="checkbox"] { margin-top: 1px; flex-shrink: 0; }
+  .checkbox-item span {
     font-size: 13px;
     color: var(--text-mid);
-    user-select: none;
     line-height: 1.4;
+    user-select: none;
   }
 
-  /* ── MATURITY SCALE ── */
-  .maturity-list { padding: 4px 0; }
-  .mat-item {
+  /* Maturity scale */
+  .maturity-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 4px 0;
+  }
+  .maturity-item {
     display: flex;
     align-items: center;
-    gap: 14px;
-    padding: 10px 18px;
+    gap: 12px;
+    padding: 11px 20px;
     cursor: pointer;
-    border-bottom: 1px solid var(--gray-bg);
+    border-bottom: 1px solid var(--gray-light);
     transition: background 0.12s;
   }
-  .mat-item:last-child { border-bottom: none; }
-  .mat-item:hover { background: var(--ar-red-light); }
-  .mat-item input[type="radio"] { display: none; }
-  .mat-pip {
-    width: 30px; height: 30px;
+  .maturity-item:last-child { border-bottom: none; }
+  .maturity-item:hover { background: var(--blue-light); }
+  .maturity-num {
+    width: 28px; height: 28px;
     border-radius: 50%;
-    background: var(--gray-bg);
-    border: 2px solid var(--border);
-    color: var(--text-light);
+    background: var(--gray-light);
+    color: var(--gray);
     font-size: 12px;
     font-weight: 700;
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
     transition: all 0.15s;
   }
-  .mat-item.selected .mat-pip {
-    background: var(--ar-red);
-    border-color: var(--ar-red);
-    color: var(--white);
+  .maturity-item input[type="radio"]:checked ~ .maturity-num {
+    background: var(--navy);
+    color: var(--gold);
   }
-  .mat-label { font-size: 13px; color: var(--text-mid); }
-  .mat-label strong { color: var(--navy); }
+  /* We need JS for this one */
+  .maturity-item.selected .maturity-num {
+    background: var(--navy);
+    color: var(--gold);
+  }
+  .maturity-label { font-size: 13px; color: var(--text-mid); }
+  .maturity-label strong { color: var(--navy); }
 
-  /* ── OPEN AREA ── */
-  .open-block {
+  /* ── OPEN TEXT AREA (standalone) ── */
+  .open-area {
     background: var(--white);
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: 8px;
     overflow: hidden;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
   }
-  .open-head {
-    padding: 12px 18px;
-    background: var(--gray-bg);
+  .open-area-header {
+    padding: 12px 20px;
+    background: var(--gray-light);
     border-bottom: 1px solid var(--border);
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     color: var(--navy);
   }
-  .open-block textarea {
-    display: block;
+  .open-area textarea {
     width: 100%;
     border: none;
-    padding: 14px 18px;
-    font-family: 'Source Sans 3', sans-serif;
+    padding: 16px 20px;
+    font-family: 'DM Sans', sans-serif;
     font-size: 13px;
     color: var(--text);
     background: var(--white);
     resize: vertical;
-    min-height: 90px;
+    min-height: 100px;
     outline: none;
   }
-  .open-block textarea:focus { background: var(--ar-red-light); }
-  .open-block textarea::placeholder { color: var(--text-light); }
+  .open-area textarea:focus { background: #F8FAFF; }
 
-  /* ── PROGRESS ── */
-  .progress-bar {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: rgba(0,0,0,0.08);
-    z-index: 100;
-  }
-  .progress-fill {
-    height: 100%;
-    background: var(--sap-gold);
-    width: 0%;
-    transition: width 0.3s ease;
-  }
-
-  /* ── FOOTER BAR ── */
-  .footer-bar {
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
+  /* ── PRINT / SUBMIT BAR ── */
+  .action-bar {
     background: var(--white);
-    border-top: 3px solid var(--sap-gold);
-    padding: 14px 40px;
+    border-top: 3px solid var(--gold);
+    padding: 24px 64px;
     display: flex;
     align-items: center;
-    gap: 14px;
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
-    z-index: 50;
+    gap: 16px;
+    position: sticky;
+    bottom: 0;
+    box-shadow: 0 -4px 20px rgba(27,42,74,0.08);
+    z-index: 10;
   }
-  .footer-note {
-    flex: 1;
-    font-size: 12px;
+  .action-bar p {
+    font-size: 13px;
     color: var(--text-light);
+    flex: 1;
     font-style: italic;
   }
   .btn {
-    padding: 9px 22px;
-    border-radius: 3px;
-    font-family: 'Source Sans 3', sans-serif;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 4px;
+    font-family: 'DM Sans', sans-serif;
     font-size: 13px;
     font-weight: 600;
     cursor: pointer;
-    border: none;
     transition: all 0.15s;
     letter-spacing: 0.3px;
   }
-  .btn-outline {
-    background: transparent;
-    border: 1.5px solid var(--navy);
-    color: var(--navy);
-  }
-  .btn-outline:hover { background: var(--navy-light); }
   .btn-primary {
-    background: var(--ar-red);
+    background: var(--navy);
     color: var(--white);
   }
-  .btn-primary:hover { background: var(--ar-red-dark); }
+  .btn-primary:hover { background: var(--navy-light); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--navy);
+    border: 1.5px solid var(--navy);
+  }
+  .btn-secondary:hover { background: var(--blue-light); }
 
-  .divider { height: 1px; background: var(--border); margin: 36px 0; }
+  /* ── SECTION DIVIDER ── */
+  .section-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 40px 0;
+  }
+
+  /* ── CONFIDENTIALITY NOTE ── */
+  .conf-note {
+    background: var(--gold-pale);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-left: 4px solid var(--gold);
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin-bottom: 32px;
+    font-size: 12px;
+    color: var(--text-mid);
+    line-height: 1.5;
+  }
+  .conf-note strong { color: var(--navy); }
 
   @media print {
-    .footer-bar, .progress-bar { display: none; }
+    .action-bar { display: none; }
     body { background: white; }
-    .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .lob-head, .part-num, .q-num { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .cover { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .lob-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   }
 </style>
 </head>
 <body>
 
-<div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
-
-<!-- HEADER -->
-<div class="header">
-  <div class="header-inner">
-    <div class="header-eyebrow">
-      <div class="eyebrow-tag">Pre-Work</div>
-      <div class="eyebrow-divider"></div>
-      <div class="eyebrow-label">State of Arkansas × SAP — AI Transformation Workshop 2026</div>
-    </div>
-    <h1>Before We Meet</h1>
-    <div class="header-sub">A few questions to make the day yours.</div>
-    <p class="header-note">10–12 minutes. No wrong answers. Your responses shape the agenda — the more candid, the more useful.</p>
-  </div>
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-tag">Pre-Work Package</div>
+  <h1>State of Arkansas</h1>
+  <div class="cover-sub">AI Transformation Roadmap — 2026 Workshop</div>
+  <div class="cover-divider"></div>
+  <p class="cover-note">Please complete this questionnaire before the workshop. Your responses will be reviewed in advance and used to shape the day's agenda. There are no wrong answers — be as candid as you'd like.</p>
 </div>
 
-<!-- PARTICIPANT -->
-<div class="participant-strip">
-  <div class="participant-inner">
-    <div class="p-field">
-      <label>Name</label>
-      <input type="text" placeholder="Your name">
-    </div>
-    <div class="p-field">
-      <label>Role / Title</label>
-      <input type="text" placeholder="Your role">
-    </div>
-    <div class="p-field">
-      <label>Agency / Department</label>
-      <input type="text" placeholder="Your agency">
-    </div>
+<!-- PARTICIPANT INFO -->
+<div class="info-bar">
+  <div class="info-field">
+    <label>Full Name</label>
+    <input type="text" placeholder="Your name">
+  </div>
+  <div class="info-field">
+    <label>Role / Title</label>
+    <input type="text" placeholder="Your role">
+  </div>
+  <div class="info-field">
+    <label>Agency / Department</label>
+    <input type="text" placeholder="Your agency">
+  </div>
+  <div class="info-field">
+    <label>SAP Products in Use</label>
+    <input type="text" placeholder="e.g. S/4HANA, Concur, SuccessFactors">
   </div>
 </div>
 
 <!-- MAIN -->
 <div class="main">
 
-  <!-- ── PART 1: STRATEGY ── -->
+  <div class="conf-note">
+    <strong>Note:</strong> This document is for workshop planning purposes only. Responses will be reviewed by the SAP facilitation team before the session and summarized — individual responses will not be shared without your permission.
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       PART 1 — STRATEGY & PRIORITIES
+  ══════════════════════════════════════════════════════ -->
   <div class="part-header">
-    <div class="part-num">1</div>
-    <div class="part-text">
-      <div class="part-title">Strategy &amp; Priorities</div>
-      <div class="part-desc">What matters most to Arkansas right now — in your own words.</div>
+    <div class="part-number">1</div>
+    <div>
+      <div class="part-title">Strategy & Priorities</div>
+      <div class="part-desc">Help us understand where Arkansas is heading and what success looks like for your team.</div>
     </div>
   </div>
 
-  <div class="q-block">
-    <div class="q-row">
-      <div class="q-num">1</div>
-      <div class="q-content">
+  <div class="question">
+    <div class="question-header">
+      <div class="question-num">1</div>
+      <div class="question-body">
         <p>What is the single most important thing you want to walk out of this workshop having decided or aligned on?</p>
-        <p class="q-hint">A decision, a direction, a commitment — whatever would make the day feel worthwhile.</p>
+        <p class="hint">This could be a decision, a direction, a commitment, or a shared understanding.</p>
       </div>
     </div>
     <textarea placeholder="Your response..."></textarea>
   </div>
 
-  <div class="q-block">
-    <div class="q-row">
-      <div class="q-num">2</div>
-      <div class="q-content">
-        <p>What are your top 2–3 strategic priorities for the next 12 months?</p>
-        <p class="q-hint">Funded initiatives, active programs, or decisions that need to be made soon.</p>
+  <div class="question">
+    <div class="question-header">
+      <div class="question-num">2</div>
+      <div class="question-body">
+        <p>What are the top 2–3 strategic priorities for your agency or function over the next 12 months?</p>
+        <p class="hint">Think about initiatives that are funded, in-flight, or actively being planned.</p>
       </div>
     </div>
     <textarea placeholder="Your response..."></textarea>
   </div>
 
-  <div class="q-block">
-    <div class="q-row">
-      <div class="q-num">3</div>
-      <div class="q-content">
-        <p>Where is the biggest opportunity for AI or automation to change how your team works?</p>
-        <p class="q-hint">Describe the pain point or opportunity — don't worry about whether SAP supports it.</p>
+  <div class="question">
+    <div class="question-header">
+      <div class="question-num">3</div>
+      <div class="question-body">
+        <p>Where do you see the biggest opportunity for AI or automation to change how your team works?</p>
+        <p class="hint">Don't worry about whether SAP supports it — describe the problem or opportunity in your own words.</p>
       </div>
     </div>
     <textarea placeholder="Your response..."></textarea>
   </div>
 
-  <div class="q-block">
-    <div class="q-row">
-      <div class="q-num">4</div>
-      <div class="q-content">
-        <p>Have you experimented with AI tools — inside or outside SAP — and what happened?</p>
-        <p class="q-hint">Any pilot, informal experiment, or use of tools like Copilot, ChatGPT, or SAP Joule counts.</p>
+  <div class="question">
+    <div class="question-header">
+      <div class="question-num">4</div>
+      <div class="question-body">
+        <p>Is there anything about your current SAP environment that you feel is holding back progress?</p>
+        <p class="hint">Known gaps, pain points, frustrations with existing tools or processes.</p>
       </div>
     </div>
     <textarea placeholder="Your response..."></textarea>
   </div>
 
-  <div class="divider"></div>
+  <div class="question">
+    <div class="question-header">
+      <div class="question-num">5</div>
+      <div class="question-body">
+        <p>Have you seen an AI or automation use case — inside or outside of SAP — that made you think "we should do something like that"?</p>
+        <p class="hint">From a conference, another agency, a vendor demo — anything that sparked an idea.</p>
+      </div>
+    </div>
+    <textarea placeholder="Your response..."></textarea>
+  </div>
 
-  <!-- ── PART 2: PAIN POINTS ── -->
+  <div class="question">
+    <div class="question-header">
+      <div class="question-num">6</div>
+      <div class="question-body">
+        <p>Do you currently use any SAP or non-SAP AI tools? What has your experience been?</p>
+        <p class="hint">Even informal experiments or pilots count. What worked, what didn't, what surprised you?</p>
+      </div>
+    </div>
+    <textarea placeholder="Your response..."></textarea>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ══════════════════════════════════════════════════════
+       PART 2 — CAPABILITY DISCOVERY (LOB QUESTIONS)
+  ══════════════════════════════════════════════════════ -->
   <div class="part-header">
-    <div class="part-num">2</div>
-    <div class="part-text">
-      <div class="part-title">Where Are the Pain Points?</div>
-      <div class="part-desc">Mark Yes if the challenge sounds familiar. Add context where it helps.</div>
+    <div class="part-number">2</div>
+    <div>
+      <div class="part-title">Capability Discovery</div>
+      <div class="part-desc">For each area, indicate whether the challenge applies to your organization. Add comments where helpful. These responses map directly to capabilities we will cover in the workshop.</div>
     </div>
   </div>
 
-  <!-- FINANCE -->
-  <div class="lob-block">
-    <div class="lob-head">
-      <div class="lob-accent"></div>
-      <div class="lob-name">Finance &amp; ERP</div>
-      <div class="lob-tag">S/4HANA</div>
+  <!-- ERP & FINANCE -->
+  <div class="lob-section">
+    <div class="lob-header">
+      <div class="lob-dot"></div>
+      <div class="lob-title">ERP & Finance — S/4HANA</div>
+      <div class="lob-badge">S/4HANA</div>
     </div>
     <table class="lob-table">
-      <thead><tr>
-        <th class="c">#</th>
-        <th>Does this sound familiar?</th>
-        <th class="c">Applies?</th>
-        <th>Notes</th>
-      </tr></thead>
-      <tbody id="fin-body"><tr>
-      <td class="n">1</td>
-      <td>Users struggle to find financial data — invoices, payment statuses, or budgets — scattered across multiple systems</td>
-      <td class="c">
-        <div class="yn">
-          <label><input type="radio" name="fin-body_0" value="yes"> Yes</label>
-          <label><input type="radio" name="fin-body_0" value="no"> No</label>
-        </div>
-      </td>
-      <td class="cm"><textarea class="cm-input" placeholder="Add context..."></textarea></td>
-    </tr><tr>
-      <td class="n">2</td>
-      <td>Finance teams lack real-time alerts for critical tasks like payment approvals, cash flow issues, or overdue invoices</td>
-      <td class="c">
-        <div class="yn">
-          <label><input type="radio" name="fin-body_1" value="yes"> Yes</label>
-          <label><input type="radio" name="fin-body_1" value="no"> No</label>
-        </div>
-      </td>
-      <td class="cm"><textarea class="cm-input" placeholder="Add context..."></textarea></td>
-    </tr><tr>
-      <td class="n">3</td>
-      <td>Matching payments to invoices manually causes delays or errors in your AP process</td>
-      <td class="c">
-        <div class="yn">
-          <label><input type="radio" name="fin-body_2" value="yes"> Yes</label>
-          <label><input type="radio" name="fin-body_2" value="no"> No</label>
-        </div>
-      </td>
-      <td class="cm"><textarea class="cm-input" placeholder="Add context..."></textarea></td>
-    </tr><tr>
-      <td class="n">4</td>
-      <td>Detecting fraudulent or unusual transactions happens too late to prevent financial impact</td>
-      <td class="c">
-        <div class="yn">
-          <label><input type="radio" name="fin-body_3" value="yes"> Yes</label>
-          <label><input type="radio" name="fin-body_3" value="no"> No</label>
-        </div>
-      </td>
-      <td class="cm"><textarea class="cm-input" placeholder="Add context..."></textarea></td>
-    </tr><tr>
-      <td class="n">5</td>
-      <td>The financial close process is delayed by manual errors or reconciliation work</td>
-      <td class="c">
-        <div class="yn">
-          <label><input type="radio" name="fin-body_4" value="yes"> Yes</label>
-          <label><input type="radio" name="fin-body_4" value="no"> No</label>
-        </div>
-      </td>
-      <td class="cm"><textarea class="cm-input" placeholder="Add context..."></textarea></td>
-    </tr><tr>
-      <td class="n">6</td>
-      <td>Finance reporting is slow because users spend too much time filtering or summarizing large data sets</td>
-      <td class="c">
-        <div class="yn">
-          <label><input type="radio" name="fin-body_5" value="yes"> Yes</label>
-          <label><input type="radio" name="fin-body_5" value="no"> No</label>
-        </div>
-      </td>
-      <td class="cm"><textarea class="cm-input" placeholder="Add context..."></textarea></td>
-    </tr></tbody>
+      <thead>
+        <tr>
+          <th class="center">#</th>
+          <th>Challenge or Pain Point</th>
+          <th class="center">Applies?</th>
+          <th>Comments / Context</th>
+        </tr>
+      </thead>
+      <tbody id="erp-tbody">
+        <!-- rows injected by JS -->
+      </tbody>
     </table>
   </div>
 
-  <!-- PROCUREMENT -->
-  <div class="lob-block">
-    <div class="lob-head">
-      <div class="lob-accent"></div>
-      <div class="lob-name">Procurement, Expenses &amp; Vendor Management</div>
-      <div class="lob-tag">Ariba · Concur · Fieldglass</div>
+  <!-- PROCUREMENT & SPEND -->
+  <div class="lob-section">
+    <div class="lob-header">
+      <div class="lob-dot"></div>
+      <div class="lob-title">Procurement & Spend Management — Ariba / Concur / Fieldglass</div>
+      <div class="lob-badge">Ariba · Concur · Fieldglass</div>
     </div>
     <table class="lob-table">
-      <thead><tr>
-        <th class="c">#</th>
-        <th>Does this sound familiar?</th>
-        <th class="c">Applies?</th>
-        <th>Notes</th>
-      </tr></thead>
-      <tbody id="proc-body"><tr>
-      <td class="n">1</td>
-      <td>Employees manually enter and itemize expenses — receipt capture and auto-population would save significant time</td>
-      <td class="c">
-        <div class="yn">
-          <label><input type="radio" name="proc-body_0" value="yes"> Yes</label>
-          <label><input type="radio" name="proc-body_0" value="no"> No</label>
-        </div>
-      </td>
-      <td class="cm"><textarea class="cm-input" placeholder="Add context..."></textarea></td>
-    </tr><tr>
-      <td class="n">2</td>
-      <td>Finance has limited visibility into T&amp;E spend before it's already been incurred</td>
-      <td class="c">
-        <div class="yn">
-          <label><input type="radio" name="proc-body_1" value="yes"> Yes</label>
-          <label><input type="radio" name="proc-body_1" value="no"> No</label>
-        </div>
-      </td>
-      <td class="cm"><textarea class="cm-input" placeholder="Add context..."></textarea></td>
-    </tr><tr>
-      <td class="n">3</td>
-      <td>Auditing expense reports manually consumes significant staff time and still misses non-compliant spend</td>
-      <td class="c">
-        <div class="yn">
-          <label><input type="radio" name="proc-body_2" value="yes"> Yes</label>
-          <label><input type="radio" name="proc-body_2" value="no"> No</label>
-        </div>
-      </td>
-      <td class="cm"><textarea class="cm-input" placeholder="Add context..."></textarea></td>
-    </tr><tr>
-      <td class="n">4</td>
-      <td>Supplier onboarding or vendor data management is a manual, time-consuming process prone to errors</td>
-      <td class="c">
-        <div class="yn">
-          <label><input type="radio" name="proc-body_3" value="yes"> Yes</label>
-          <label><input type="radio" name="proc-body_3" value="no"> No</label>
-        </div>
-      </td>
-      <td class="cm"><textarea class="cm-input" placeholder="Add context..."></textarea></td>
-    </tr><tr>
-      <td class="n">5</td>
-      <td>Procurement teams spend significant time searching for supplier information or managing catalog items</td>
-      <td class="c">
-        <div class="yn">
-          <label><input type="radio" name="proc-body_4" value="yes"> Yes</label>
-          <label><input type="radio" name="proc-body_4" value="no"> No</label>
-        </div>
-      </td>
-      <td class="cm"><textarea class="cm-input" placeholder="Add context..."></textarea></td>
-    </tr><tr>
-      <td class="n">6</td>
-      <td>Invoice errors are caught late because the review process is largely manual</td>
-      <td class="c">
-        <div class="yn">
-          <label><input type="radio" name="proc-body_5" value="yes"> Yes</label>
-          <label><input type="radio" name="proc-body_5" value="no"> No</label>
-        </div>
-      </td>
-      <td class="cm"><textarea class="cm-input" placeholder="Add context..."></textarea></td>
-    </tr><tr>
-      <td class="n">7</td>
-      <td>Creating or managing statements of work and contingent workforce job descriptions is slow and inconsistent</td>
-      <td class="c">
-        <div class="yn">
-          <label><input type="radio" name="proc-body_6" value="yes"> Yes</label>
-          <label><input type="radio" name="proc-body_6" value="no"> No</label>
-        </div>
-      </td>
-      <td class="cm"><textarea class="cm-input" placeholder="Add context..."></textarea></td>
-    </tr></tbody>
+      <thead>
+        <tr>
+          <th class="center">#</th>
+          <th>Challenge or Pain Point</th>
+          <th class="center">Applies?</th>
+          <th>Comments / Context</th>
+        </tr>
+      </thead>
+      <tbody id="proc-tbody"></tbody>
     </table>
   </div>
 
   <!-- HR -->
-  <div class="lob-block">
-    <div class="lob-head">
-      <div class="lob-accent"></div>
-      <div class="lob-name">Human Resources &amp; Workforce</div>
-      <div class="lob-tag">SuccessFactors</div>
+  <div class="lob-section">
+    <div class="lob-header">
+      <div class="lob-dot"></div>
+      <div class="lob-title">Human Resources — SuccessFactors</div>
+      <div class="lob-badge">SuccessFactors</div>
     </div>
     <table class="lob-table">
-      <thead><tr>
-        <th class="c">#</th>
-        <th>Does this sound familiar?</th>
-        <th class="c">Applies?</th>
-        <th>Notes</th>
-      </tr></thead>
-      <tbody id="hr-body"><tr>
-      <td class="n">1</td>
-      <td>HR lacks easy access to workforce insights — turnover patterns, skills gaps, or performance trends — without manual analysis</td>
-      <td class="c">
-        <div class="yn">
-          <label><input type="radio" name="hr-body_0" value="yes"> Yes</label>
-          <label><input type="radio" name="hr-body_0" value="no"> No</label>
-        </div>
-      </td>
-      <td class="cm"><textarea class="cm-input" placeholder="Add context..."></textarea></td>
-    </tr><tr>
-      <td class="n">2</td>
-      <td>Writing job descriptions, interview questions, or performance reviews is time-consuming and inconsistent across departments</td>
-      <td class="c">
-        <div class="yn">
-          <label><input type="radio" name="hr-body_1" value="yes"> Yes</label>
-          <label><input type="radio" name="hr-body_1" value="no"> No</label>
-        </div>
-      </td>
-      <td class="cm"><textarea class="cm-input" placeholder="Add context..."></textarea></td>
-    </tr><tr>
-      <td class="n">3</td>
-      <td>Applicant screening is slow or relies too heavily on manual review</td>
-      <td class="c">
-        <div class="yn">
-          <label><input type="radio" name="hr-body_2" value="yes"> Yes</label>
-          <label><input type="radio" name="hr-body_2" value="no"> No</label>
-        </div>
-      </td>
-      <td class="cm"><textarea class="cm-input" placeholder="Add context..."></textarea></td>
-    </tr><tr>
-      <td class="n">4</td>
-      <td>Employees struggle to find answers to HR questions without going through the HR team directly</td>
-      <td class="c">
-        <div class="yn">
-          <label><input type="radio" name="hr-body_3" value="yes"> Yes</label>
-          <label><input type="radio" name="hr-body_3" value="no"> No</label>
-        </div>
-      </td>
-      <td class="cm"><textarea class="cm-input" placeholder="Add context..."></textarea></td>
-    </tr><tr>
-      <td class="n">5</td>
-      <td>Learning and development paths are generic rather than personalized to each employee's role or goals</td>
-      <td class="c">
-        <div class="yn">
-          <label><input type="radio" name="hr-body_4" value="yes"> Yes</label>
-          <label><input type="radio" name="hr-body_4" value="no"> No</label>
-        </div>
-      </td>
-      <td class="cm"><textarea class="cm-input" placeholder="Add context..."></textarea></td>
-    </tr></tbody>
+      <thead>
+        <tr>
+          <th class="center">#</th>
+          <th>Challenge or Pain Point</th>
+          <th class="center">Applies?</th>
+          <th>Comments / Context</th>
+        </tr>
+      </thead>
+      <tbody id="hr-tbody"></tbody>
     </table>
   </div>
 
-  <div class="divider"></div>
+  <!-- BTP & IT -->
+  <div class="lob-section">
+    <div class="lob-header">
+      <div class="lob-dot"></div>
+      <div class="lob-title">IT & Platform — BTP / Datasphere / Analytics</div>
+      <div class="lob-badge">BTP · SAC · Datasphere</div>
+    </div>
+    <table class="lob-table">
+      <thead>
+        <tr>
+          <th class="center">#</th>
+          <th>Challenge or Pain Point</th>
+          <th class="center">Applies?</th>
+          <th>Comments / Context</th>
+        </tr>
+      </thead>
+      <tbody id="btp-tbody"></tbody>
+    </table>
+  </div>
 
-  <!-- ── PART 3: SELF ASSESSMENT ── -->
+  <!-- BUSINESS TRANSFORMATION -->
+  <div class="lob-section">
+    <div class="lob-header">
+      <div class="lob-dot"></div>
+      <div class="lob-title">Business Transformation — Signavio / LeanIX</div>
+      <div class="lob-badge">Signavio · LeanIX</div>
+    </div>
+    <table class="lob-table">
+      <thead>
+        <tr>
+          <th class="center">#</th>
+          <th>Challenge or Pain Point</th>
+          <th class="center">Applies?</th>
+          <th>Comments / Context</th>
+        </tr>
+      </thead>
+      <tbody id="bt-tbody"></tbody>
+    </table>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ══════════════════════════════════════════════════════
+       PART 3 — SELF ASSESSMENT
+  ══════════════════════════════════════════════════════ -->
   <div class="part-header">
-    <div class="part-num">3</div>
-    <div class="part-text">
-      <div class="part-title">Quick Self-Assessment</div>
-      <div class="part-desc">Helps us calibrate the conversation to where Arkansas is today.</div>
+    <div class="part-number">3</div>
+    <div>
+      <div class="part-title">Self-Assessment</div>
+      <div class="part-desc">Help us calibrate the conversation to where Arkansas is today.</div>
     </div>
   </div>
 
-  <!-- Maturity -->
-  <div class="cb-section">
-    <div class="cb-head">
-      Where would you place your organization on the AI maturity scale?
-      <span class="cb-hint">Select one</span>
+  <!-- Products in use -->
+  <div class="checkbox-section">
+    <div class="checkbox-section-header">
+      Which SAP products does your organization actively use today?
+      <span class="checkbox-section-sub">Check all that apply</span>
     </div>
-    <div class="maturity-list">
-      <label class="mat-item" data-v="1"><input type="radio" name="mat" value="1"><div class="mat-pip">1</div><div class="mat-label"><strong>Exploring</strong> — We're learning what's possible; no active programs yet</div></label>
-      <label class="mat-item" data-v="2"><input type="radio" name="mat" value="2"><div class="mat-pip">2</div><div class="mat-label"><strong>Beginning</strong> — Some pilots or experiments underway</div></label>
-      <label class="mat-item" data-v="3"><input type="radio" name="mat" value="3"><div class="mat-pip">3</div><div class="mat-label"><strong>Activating</strong> — We have a plan and are starting to execute</div></label>
-      <label class="mat-item" data-v="4"><input type="radio" name="mat" value="4"><div class="mat-pip">4</div><div class="mat-label"><strong>Scaling</strong> — AI is live in some workflows, expanding to others</div></label>
-      <label class="mat-item" data-v="5"><input type="radio" name="mat" value="5"><div class="mat-pip">5</div><div class="mat-label"><strong>Leading</strong> — AI is core to how we plan and operate</div></label>
+    <div class="checkbox-grid">
+      <label class="checkbox-item"><input type="checkbox"><span>SAP S/4HANA (Finance / ERP)</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>SAP Ariba (Procurement / Sourcing)</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>SAP SuccessFactors (HR)</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>SAP Concur (Expenses / Travel)</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>SAP Analytics Cloud (SAC)</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>SAP Datasphere / BW</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>SAP Business Technology Platform (BTP)</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>SAP Fieldglass (Contingent Workforce)</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>SAP Integration Suite</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>SAP Business Network</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>SAP Signavio</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>SAP LeanIX</span></label>
     </div>
   </div>
 
-  <!-- Priorities -->
-  <div class="cb-section">
-    <div class="cb-head">
-      Which areas are most relevant to your role?
-      <span class="cb-hint">Check your top priorities</span>
+  <!-- Priority areas -->
+  <div class="checkbox-section">
+    <div class="checkbox-section-header">
+      Which capability areas are most relevant to your role?
+      <span class="checkbox-section-sub">Check your top priorities</span>
     </div>
-    <div class="cb-grid">
-      <label class="cb-item"><input type="checkbox"><span>Financial automation &amp; reporting</span></label>
-      <label class="cb-item"><input type="checkbox"><span>Procurement &amp; supplier management</span></label>
-      <label class="cb-item"><input type="checkbox"><span>Invoice processing &amp; AP automation</span></label>
-      <label class="cb-item"><input type="checkbox"><span>Contract lifecycle management</span></label>
-      <label class="cb-item"><input type="checkbox"><span>Expense &amp; travel compliance</span></label>
-      <label class="cb-item"><input type="checkbox"><span>HR &amp; talent management</span></label>
-      <label class="cb-item"><input type="checkbox"><span>Predictive analytics &amp; forecasting</span></label>
-      <label class="cb-item"><input type="checkbox"><span>Workforce planning &amp; development</span></label>
+    <div class="checkbox-grid">
+      <label class="checkbox-item"><input type="checkbox"><span>Financial automation & reporting</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>Procurement & supplier management</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>Invoice processing & AP automation</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>Contract lifecycle management</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>Expense & travel compliance</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>HR / talent management</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>Predictive analytics & forecasting</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>Process automation (low-code/no-code)</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>Custom AI development</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>Data governance & integration</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>IT architecture & platform strategy</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>Sustainability & ESG reporting</span></label>
+    </div>
+  </div>
+
+  <!-- AI Maturity -->
+  <div class="checkbox-section">
+    <div class="checkbox-section-header">
+      Where would you place your organization on the AI maturity scale today?
+      <span class="checkbox-section-sub">Select one</span>
+    </div>
+    <div class="maturity-grid" id="maturity-grid">
+      <label class="maturity-item" data-val="1">
+        <input type="radio" name="maturity" value="1" style="display:none">
+        <div class="maturity-num">1</div>
+        <div class="maturity-label"><strong>Exploring</strong> — We are learning what AI can do; no active programs</div>
+      </label>
+      <label class="maturity-item" data-val="2">
+        <input type="radio" name="maturity" value="2" style="display:none">
+        <div class="maturity-num">2</div>
+        <div class="maturity-label"><strong>Beginning</strong> — Some pilots or experiments underway</div>
+      </label>
+      <label class="maturity-item" data-val="3">
+        <input type="radio" name="maturity" value="3" style="display:none">
+        <div class="maturity-num">3</div>
+        <div class="maturity-label"><strong>Activating</strong> — We have a plan and are starting to execute</div>
+      </label>
+      <label class="maturity-item" data-val="4">
+        <input type="radio" name="maturity" value="4" style="display:none">
+        <div class="maturity-num">4</div>
+        <div class="maturity-label"><strong>Scaling</strong> — AI is embedded in some workflows, expanding to others</div>
+      </label>
+      <label class="maturity-item" data-val="5">
+        <input type="radio" name="maturity" value="5" style="display:none">
+        <div class="maturity-num">5</div>
+        <div class="maturity-label"><strong>Leading</strong> — AI is core to how we operate and plan</div>
+      </label>
     </div>
   </div>
 
   <!-- Barriers -->
-  <div class="cb-section">
-    <div class="cb-head">
-      What's slowing AI progress in your organization?
-      <span class="cb-hint">Check all that apply</span>
+  <div class="checkbox-section">
+    <div class="checkbox-section-header">
+      What is the primary barrier to AI progress in your organization today?
+      <span class="checkbox-section-sub">Select all that apply</span>
     </div>
-    <div class="cb-grid">
-      <label class="cb-item"><input type="checkbox"><span>Data quality or data access</span></label>
-      <label class="cb-item"><input type="checkbox"><span>Budget or licensing uncertainty</span></label>
-      <label class="cb-item"><input type="checkbox"><span>Lack of internal skills or talent</span></label>
-      <label class="cb-item"><input type="checkbox"><span>Unclear ROI or business case</span></label>
-      <label class="cb-item"><input type="checkbox"><span>Security or compliance concerns</span></label>
-      <label class="cb-item"><input type="checkbox"><span>Change management or user adoption</span></label>
-      <label class="cb-item"><input type="checkbox"><span>Too many competing priorities</span></label>
-      <label class="cb-item"><input type="checkbox"><span>Uncertainty about where to start</span></label>
+    <div class="checkbox-grid">
+      <label class="checkbox-item"><input type="checkbox"><span>Data quality or data access</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>Budget or licensing uncertainty</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>Lack of internal AI skills or talent</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>Unclear business case or ROI</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>Security, sovereignty, or compliance concerns</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>Vendor or product uncertainty</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>Change management or user adoption</span></label>
+      <label class="checkbox-item"><input type="checkbox"><span>Too many competing priorities</span></label>
     </div>
   </div>
 
-  <!-- Final open -->
-  <div class="open-block">
-    <div class="open-head">Anything else you'd like us to know or make sure we cover?</div>
-    <textarea placeholder="Specific use cases, concerns, questions for the team, or context that would help us prepare..."></textarea>
+  <!-- Open ended -->
+  <div class="open-area">
+    <div class="open-area-header">Anything else you'd like us to know before the workshop?</div>
+    <textarea placeholder="Additional context, specific use cases you want discussed, concerns, or questions for the team..."></textarea>
   </div>
 
 </div><!-- /main -->
 
-<!-- FOOTER -->
-<div class="footer-bar">
-  <div class="footer-note">When complete, use Print / Save PDF and return to your SAP contact before the workshop.</div>
-  <button class="btn btn-outline" onclick="window.print()">Print / Save PDF</button>
-  <button class="btn btn-primary" onclick="showSummary()">Review My Responses</button>
+<!-- ACTION BAR -->
+<div class="action-bar">
+  <p>When complete, save this file and return it to your SAP contact, or print to PDF using your browser's print function.</p>
+  <button class="btn btn-secondary" onclick="window.print()">Print / Save PDF</button>
+  <button class="btn btn-primary" onclick="summarize()">Review Responses</button>
 </div>
 
 <script>
-// ── DATA ──────────────────────────────────────────────────────────────────────
-const questions = {
-  'fin-body': [
-    "Users struggle to find financial data — invoices, payment statuses, or budgets — scattered across multiple systems",
-    "Finance teams lack real-time alerts for critical tasks like payment approvals, cash flow issues, or overdue invoices",
-    "Matching payments to invoices manually causes delays or errors in your AP process",
-    "Detecting fraudulent or unusual transactions happens too late to prevent financial impact",
-    "The financial close process is delayed by manual errors or reconciliation work",
-    "Finance reporting is slow because users spend too much time filtering or summarizing large data sets",
+// ── LOB QUESTION DATA ──────────────────────────────────────────────────────────
+const lobData = {
+  'erp-tbody': [
+    "Do your users face difficulties finding financial data like invoices, payment statuses, or budgets across multiple systems in a timely manner?",
+    "Do your finance users lack timely recommendations or alerts on tasks like payment approvals, cash flow, or overdue invoices?",
+    "Do your users struggle to identify risky payment behaviors, like customers consistently delaying payments on contracts?",
+    "Does manually matching payments with invoices cause frequent delays or errors in your financial processes?",
+    "Do you face challenges in detecting fraudulent or unusual financial transactions early enough to prevent financial risks?",
+    "Are your users spending significant time manually creating or processing orders from unstructured inputs like emails or PDFs?",
+    "Do manual errors during the financial close process delay reporting or create inaccuracies in financial statements?",
+    "Do your finance teams lack real-time insights that could help identify cost-saving opportunities or predict cash flow shortfalls?",
+    "Is manually filtering large volumes of financial data slowing down report generation or causing users to miss key insights?",
+    "Do inconsistent or outdated financial master data records frequently cause errors in your reporting processes?",
   ],
-  'proc-body': [
-    "Employees manually enter and itemize expenses — receipt capture and auto-population would save significant time",
-    "Finance has limited visibility into T&E spend before it's already been incurred",
-    "Auditing expense reports manually consumes significant staff time and still misses non-compliant spend",
-    "Supplier onboarding or vendor data management is a manual, time-consuming process prone to errors",
-    "Procurement teams spend significant time searching for supplier information or managing catalog items",
-    "Invoice errors are caught late because the review process is largely manual",
-    "Creating or managing statements of work and contingent workforce job descriptions is slow and inconsistent",
+  'proc-tbody': [
+    "Do your travelers manually input and itemize expenses — could AI-assisted receipt capture reduce this burden?",
+    "Does your finance team have difficulty budgeting and tracking T&E spend due to limited visibility into employee activity?",
+    "Does your finance team spend significant time manually auditing expense reports and rejecting non-compliant spend?",
+    "Are employees facing difficulties getting quick approvals for travel requests due to manual processing?",
+    "Do category managers struggle to segment supplier categories effectively due to manual processes?",
+    "Are procurement teams spending significant time manually searching supplier listings and vendor information?",
+    "Are your procurement teams facing delays in detecting and correcting invoice errors due to manual reviews?",
+    "Is the process of creating statements of work (SOW) for services procurement time-consuming and error-prone?",
+    "Is it difficult for procurement and vendor teams to access key supplier performance insights and contract data during decision-making?",
+    "Do your procurement teams struggle to generate procurement-related templates quickly, impacting time-to-procurement?",
   ],
-  'hr-body': [
-    "HR lacks easy access to workforce insights — turnover patterns, skills gaps, or performance trends — without manual analysis",
-    "Writing job descriptions, interview questions, or performance reviews is time-consuming and inconsistent across departments",
-    "Applicant screening is slow or relies too heavily on manual review",
-    "Employees struggle to find answers to HR questions without going through the HR team directly",
-    "Learning and development paths are generic rather than personalized to each employee's role or goals",
+  'hr-tbody': [
+    "Do your HR managers struggle to identify patterns, trends, and actionable insights from employee data to support decisions?",
+    "Is the creation of job descriptions a time-consuming task due to manual data collection or lack of structured input?",
+    "Do your hiring managers face difficulties creating role-specific interview questions to evaluate candidates effectively?",
+    "Is it challenging to personalize and track learning journeys for employees due to limited AI-assisted recommendations?",
+    "Does your recruitment process take longer due to manual or inefficient applicant screening methods?",
+    "Are your HR teams manually building skills frameworks, making it difficult to align skills development with organizational goals?",
+    "Do employees face delays getting HR-related queries resolved due to the absence of AI-based self-service tools?",
+    "Is the process of writing performance reviews and evaluations time-consuming and inconsistent across departments?",
+  ],
+  'btp-tbody': [
+    "Are your developers spending significant time on coding and debugging, slowing down the development of business applications?",
+    "Are your business users struggling to interact with data and generate reports due to complex traditional query tools?",
+    "Are manual or repetitive tasks slowing down critical business processes, reducing productivity across departments?",
+    "Do employees struggle to access relevant business insights when navigating across SAP applications and datasets?",
+    "Is your organization finding it difficult to build, deploy, and operationalize AI models without specialized data science skills?",
+    "Are your data teams spending significant time manually tagging and curating metadata for enterprise data searches?",
+    "Is the manual process of integrating various applications slowing down key operational workflows?",
+    "Are delays in automating business processes hindering productivity due to the lack of efficient process modeling tools?",
+  ],
+  'bt-tbody': [
+    "Are you finding it challenging to recommend optimal processes or workflows based on operational data for efficiency improvements?",
+    "Do your teams face challenges identifying the right performance metrics to monitor and optimize key business processes?",
+    "Are your business processes difficult to analyze due to limited visibility and manual efforts in tracking bottlenecks?",
+    "Is there difficulty managing enterprise architecture data to support decision-making on technology investments or modernization?",
+    "Do you face language barriers or inefficiencies when translating information across departments or for federal reporting?",
+    "Are your teams unable to quickly find specific information within large datasets or across multiple applications?",
   ],
 };
 
-// ── RENDER TABLES ─────────────────────────────────────────────────────────────
-Object.entries(questions).forEach(([id, qs]) => {
-  const tbody = document.getElementById(id);
-  qs.forEach((q, i) => {
-    const uid = `${id}_${i}`;
+// Inject table rows
+Object.entries(lobData).forEach(([tbodyId, questions]) => {
+  const tbody = document.getElementById(tbodyId);
+  questions.forEach((q, i) => {
+    const uid = tbodyId + '_' + i;
     const tr = document.createElement('tr');
     tr.innerHTML = `
-      <td class="n">${i + 1}</td>
+      <td class="num">${i + 1}</td>
       <td>${q}</td>
-      <td class="c">
-        <div class="yn">
-          <label><input type="radio" name="${uid}" value="yes"> Yes</label>
-          <label><input type="radio" name="${uid}" value="no"> No</label>
+      <td class="check">
+        <div class="yn-wrap">
+          <label class="yn-btn">
+            <input type="radio" name="${uid}" value="yes">
+            <span>Yes</span>
+          </label>
+          <label class="yn-btn">
+            <input type="radio" name="${uid}" value="no">
+            <span>No</span>
+          </label>
         </div>
       </td>
-      <td class="cm"><textarea class="cm-input" placeholder="Add context..."></textarea></td>
+      <td class="comments">
+        <textarea class="comment-input" placeholder="Add context..."></textarea>
+      </td>
     `;
     tbody.appendChild(tr);
   });
 });
 
-// ── MATURITY CLICK ────────────────────────────────────────────────────────────
-document.querySelectorAll('.mat-item').forEach(el => {
-  el.addEventListener('click', () => {
-    document.querySelectorAll('.mat-item').forEach(m => m.classList.remove('selected'));
-    el.classList.add('selected');
-    el.querySelector('input').checked = true;
-    updateProgress();
+// ── MATURITY SCALE ─────────────────────────────────────────────────────────────
+document.querySelectorAll('.maturity-item').forEach(item => {
+  item.addEventListener('click', () => {
+    document.querySelectorAll('.maturity-item').forEach(el => el.classList.remove('selected'));
+    item.classList.add('selected');
+    item.querySelector('input[type="radio"]').checked = true;
   });
 });
 
-// ── PROGRESS BAR ─────────────────────────────────────────────────────────────
-function updateProgress() {
-  const textareas = document.querySelectorAll('textarea');
-  const filled = [...textareas].filter(t => t.value.trim().length > 2).length;
-  const radios = Object.keys(questions).reduce((acc, id) => {
-    return acc + questions[id].filter((_, i) => document.querySelector(`input[name="${id}_${i}"]:checked`)).length;
-  }, 0);
-  const totalRadios = Object.values(questions).reduce((a, q) => a + q.length, 0);
-  const maturity = document.querySelector('input[name="mat"]:checked') ? 1 : 0;
-  const total = textareas.length + totalRadios + 1;
-  const done = Math.min(filled, 5) + radios + maturity;
-  document.getElementById('progress').style.width = Math.round((done / total) * 100) + '%';
-}
-
-document.querySelectorAll('textarea, input[type="radio"], input[type="checkbox"]').forEach(el => {
-  el.addEventListener('change', updateProgress);
-  el.addEventListener('input', updateProgress);
-});
-
-// ── SUMMARY ──────────────────────────────────────────────────────────────────
-function showSummary() {
-  const yeses = [];
-  Object.entries(questions).forEach(([id, qs]) => {
-    qs.forEach((q, i) => {
-      const r = document.querySelector(`input[name="${id}_${i}"]:checked`);
-      if (r && r.value === 'yes') yeses.push('• ' + q.substring(0, 72) + (q.length > 72 ? '…' : ''));
+// ── REVIEW SUMMARY ─────────────────────────────────────────────────────────────
+function summarize() {
+  const yesItems = [];
+  Object.entries(lobData).forEach(([tbodyId, questions]) => {
+    questions.forEach((q, i) => {
+      const uid = tbodyId + '_' + i;
+      const checked = document.querySelector(`input[name="${uid}"]:checked`);
+      if (checked && checked.value === 'yes') {
+        yesItems.push('• ' + q.substring(0, 80) + (q.length > 80 ? '...' : ''));
+      }
     });
   });
-  const mat = document.querySelector('input[name="mat"]:checked');
-  const matLabel = mat ? document.querySelector(`.mat-item[data-v="${mat.value}"] .mat-label`).textContent : 'Not selected';
-  const barriers = [...document.querySelectorAll('.cb-section:nth-of-type(3) input:checked')].map(el => '• ' + el.nextElementSibling.textContent);
 
-  let out = `RESPONSE SUMMARY\n${'─'.repeat(44)}\n\n`;
-  out += `AI Maturity: ${matLabel}\n\n`;
-  if (barriers.length) out += `Barriers:\n${barriers.join('\n')}\n\n`;
-  if (yeses.length) out += `Confirmed Pain Points (${yeses.length}):\n${yeses.join('\n')}\n`;
-  else out += 'No pain points confirmed yet.\n';
-  alert(out);
+  const maturity = document.querySelector('input[name="maturity"]:checked');
+  const maturityLabel = maturity ? document.querySelector(`.maturity-item[data-val="${maturity.value}"] .maturity-label`).textContent : 'Not selected';
+
+  const barriers = [...document.querySelectorAll('.checkbox-section:nth-of-type(4) input:checked')].map(el => el.nextElementSibling.textContent);
+
+  let msg = `RESPONSE SUMMARY\n${'─'.repeat(40)}\n\n`;
+  msg += `AI Maturity: ${maturityLabel}\n\n`;
+  if (barriers.length) msg += `Key Barriers:\n${barriers.map(b => '• ' + b).join('\n')}\n\n`;
+  if (yesItems.length) {
+    msg += `Pain Points Identified (${yesItems.length}):\n${yesItems.join('\n')}\n`;
+  } else {
+    msg += 'No pain points selected yet.\n';
+  }
+
+  alert(msg);
 }
 </script>
-
-
-</body></html>
+</body>
+</html>
